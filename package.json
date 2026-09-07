@@ -1,0 +1,13 @@
+{
+  "name": "things-cli",
+  "version": "0.1.0",
+  "description": "Command line tool for the Things 3 app on macOS",
+  "type": "module",
+  "bin": {
+    "things": "./bin/things.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
