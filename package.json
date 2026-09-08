@@ -6,6 +6,10 @@
   "bin": {
     "things": "./bin/things.js"
   },
+  "scripts": {
+    "check": "node --check bin/things.js && node --check lib/*.js && node --test",
+    "test": "node --test"
+  },
   "engines": {
     "node": ">=20"
   },
