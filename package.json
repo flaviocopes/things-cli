@@ -1,26 +1,11 @@
 {
-  "name": "@flaviocopes/things-cli",
+  "name": "things-cli",
   "version": "0.1.0",
   "description": "Command line tool for the Things 3 app on macOS",
   "type": "module",
-  "files": [
-    "bin",
-    "lib",
-    ".agents/skills/things"
-  ],
   "bin": {
-    "things": "bin/things.js"
+    "things": "./bin/things.js"
   },
-  "os": [
-    "darwin"
-  ],
-  "keywords": [
-    "things",
-    "things3",
-    "cli",
-    "macos",
-    "productivity"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flaviocopes/things-cli.git"
@@ -31,11 +16,7 @@
   "homepage": "https://github.com/flaviocopes/things-cli#readme",
   "scripts": {
     "check": "node --check bin/things.js && node --check lib/*.js && node --test",
-    "prepublishOnly": "npm run check",
     "test": "node --test"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "engines": {
     "node": ">=20"

@@ -9,18 +9,12 @@ No dependencies. Node 20+.
 ## Install
 
 ```bash
-npm install -g @flaviocopes/things-cli
-```
-
-This puts a `things` command on your PATH.
-
-To install from source instead:
-
-```bash
 git clone https://github.com/flaviocopes/things-cli.git ~/dev/things-cli
 cd ~/dev/things-cli
 npm link
 ```
+
+This puts a `things` command on your PATH.
 
 ## How it works
 
