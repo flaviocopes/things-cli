@@ -8,6 +8,14 @@ No dependencies. Node 20+.
 
 ## Install
 
+Install directly from GitHub:
+
+```bash
+npm install -g github:flaviocopes/things-cli
+```
+
+Or clone the repository:
+
 ```bash
 git clone https://github.com/flaviocopes/things-cli.git ~/dev/things-cli
 cd ~/dev/things-cli
