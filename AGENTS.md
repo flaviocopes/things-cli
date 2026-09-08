@@ -17,5 +17,5 @@ Rules:
 - Run `npm run check` after code changes. This checks syntax and runs unit tests.
 - Keep unit tests deterministic. Mock or isolate macOS integration points.
 - Use `--json` when another tool or agent will consume command output.
-- Update the README and `.cursor/skills/things/SKILL.md` when commands change.
+- Update the README and `.agents/skills/things/SKILL.md` when commands change.
 - Writing style for docs and help text: short sentences, plain words, no filler.
