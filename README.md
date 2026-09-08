@@ -105,6 +105,66 @@ things open "flaviocopes.com sponsors"                       # show it in the ap
 
 Without `--in`, `note` and `done` look for a project with that name first, then for any to-do.
 
+## Use with coding agents
+
+The repository includes a portable Agent Skill at `.agents/skills/things/SKILL.md`. Compatible agents can discover it and learn the safe workflow.
+
+You can ask an agent to work with Things in plain language:
+
+- "Add a task to call the accountant tomorrow."
+- "Turn this conversation into a Things project."
+- "Show my tasks for today and help me choose three."
+- "Append this decision to the newsletter project notes."
+- "Mark Update the home page as done in Launch newsletter redesign."
+
+### Turn a plan into a project
+
+Ask the agent:
+
+> Create a Things project from this plan. Keep the background in the project notes. Group the work under headings, then verify the imported project.
+
+The agent can write a temporary Markdown file, import it, and read it back:
+
+```bash
+things import /tmp/newsletter-project.md
+things show "Launch newsletter redesign"
+```
+
+### Let an agent review your tasks
+
+Use JSON when the agent needs structured data:
+
+```bash
+things list today --json
+things show "Launch newsletter redesign" --json
+things search "newsletter" --json
+```
+
+For example, ask:
+
+> Review today's tasks. Suggest what to do first, but do not change anything.
+
+### Keep the reasoning
+
+Tasks often need context from the conversation. Ask the agent to save that context in the project notes:
+
+```bash
+things note "Launch newsletter redesign" --file /tmp/project-notes.md
+```
+
+This keeps the plan, decisions, and tasks together.
+
+## Practical tips
+
+- Use exact project and task names. Matching is case sensitive.
+- Pass `--in "Project name"` when task names may repeat.
+- Ask agents to read before updating uncertain names.
+- Use `--json` when another command or agent needs the result.
+- Use stdin or `--file` for long notes. This avoids quoting problems.
+- Put shared context in project notes, not only inside tasks.
+- Ask the agent to verify writes with `things show`.
+- The CLI cannot delete anything. This is intentional.
+
 ## Use from a script
 
 The `lib/` modules are plain ESM:
