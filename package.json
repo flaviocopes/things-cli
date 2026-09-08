@@ -6,6 +6,14 @@
   "bin": {
     "things": "./bin/things.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flaviocopes/things-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flaviocopes/things-cli/issues"
+  },
+  "homepage": "https://github.com/flaviocopes/things-cli#readme",
   "scripts": {
     "check": "node --check bin/things.js && node --check lib/*.js && node --test",
     "test": "node --test"

@@ -9,7 +9,7 @@ No dependencies. Node 20+.
 ## Install
 
 ```bash
-git clone <this repo> ~/dev/things-cli
+git clone https://github.com/flaviocopes/things-cli.git ~/dev/things-cli
 cd ~/dev/things-cli
 npm link
 ```
