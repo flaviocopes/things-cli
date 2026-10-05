@@ -13,8 +13,12 @@ import {
   search,
   setNotes,
 } from '../lib/script.js'
+import { manifest, printManifest } from '../lib/manifest.js'
 
 const HELP = `things - command line for Things 3
+
+Agent
+  things capabilities [--json]           what this CLI can do (static, no app access)
 
 Create (URL scheme)
   things add <title> [--notes text] [--project name] [--heading name]
@@ -58,10 +62,21 @@ const { values, positionals } = parseArgs({
     file: { type: 'string' },
     json: { type: 'boolean', default: false },
     help: { type: 'boolean', short: 'h', default: false },
+    version: { type: 'boolean' },
   },
 })
 
 const [command, ...rest] = positionals
+
+if (values.version) {
+  console.log(`things ${manifest.version}`)
+  process.exit(0)
+}
+
+if (values.help && !command) {
+  console.log(HELP)
+  process.exit(0)
+}
 
 function text(value) {
   if (value === '-') return readFileSync(0, 'utf8').trimEnd()
@@ -104,6 +119,14 @@ try {
     case undefined:
     case 'help':
       console.log(HELP)
+      break
+
+    case 'capabilities':
+      if (values.json) {
+        console.log(JSON.stringify(manifest, null, 2))
+      } else {
+        printManifest(manifest)
+      }
       break
 
     case 'add': {

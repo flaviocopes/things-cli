@@ -35,6 +35,13 @@ Things must be installed. It gets launched if it is not running.
 
 ## Commands
 
+Agents can ask what the CLI can do without opening Things:
+
+```bash
+things capabilities
+things capabilities --json
+```
+
 ### Create
 
 ```bash

@@ -3,6 +3,7 @@
 `things-cli` is a dependency-free Node ESM CLI for the Things 3 macOS app, installed globally as `things` via `npm link`.
 
 - `bin/things.js`: argument parsing (`node:util` `parseArgs`) and the command switch.
+- `lib/manifest.js`: agent-ready `capabilities` manifest and changelog. Bump `package.json` and add a changelog entry there in the same commit.
 - `lib/scheme.js`: builds and opens `things:///` URLs. Used for everything that creates items (`add`, `project`, `import`, `json`). Exports `todo()`, `heading()`, `project()` helpers for the `json` payload.
 - `lib/script.js`: JavaScript for Automation (`osascript -l JavaScript`) for reads and updates. Values always go through `argv`, never string interpolation, to avoid quoting bugs.
 - `lib/markdown.js`: parses the `# Title / ## Heading / - task / indented notes` format used by `things import`.
