@@ -48,6 +48,7 @@ things show "Launch newsletter redesign"
 
 ## Rules
 
+- Keep apostrophes. `things add "Don't forget"` stores the apostrophe, and so does a Markdown import. Do not strip them to avoid a quoting problem. Write a file and run `things import`.
 - Never add delete or trash commands.
 - Never modify a real project while testing.
 - Use only `things-cli test project` for integration tests.

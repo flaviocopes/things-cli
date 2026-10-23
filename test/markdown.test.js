@@ -40,6 +40,13 @@ Ship the redesign by October.
   })
 })
 
+test('keeps apostrophes in titles and notes', () => {
+  const parsed = parseProjectMarkdown("# Don't forget\n\n- That's the task\n  It's the note.\n")
+  assert.equal(parsed.attributes.title, "Don't forget")
+  assert.equal(parsed.attributes.items[0].attributes.title, "That's the task")
+  assert.equal(parsed.attributes.items[0].attributes.notes, "It's the note.")
+})
+
 test('rejects markdown without a project title', () => {
   assert.throws(
     () => parseProjectMarkdown('- Write the announcement'),

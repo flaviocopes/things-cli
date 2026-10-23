@@ -163,6 +163,7 @@ This keeps the plan, decisions, and tasks together.
 
 ## Practical tips
 
+- Apostrophes work. `things add "Don't forget the keys"` keeps them, and so does `things import`.
 - Use exact project and task names. Matching is case sensitive.
 - Pass `--in "Project name"` when task names may repeat.
 - Ask agents to read before updating uncertain names.

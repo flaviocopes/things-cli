@@ -2,6 +2,13 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { buildUrl, heading, project, todo } from '../lib/scheme.js'
 
+test('apostrophes round-trip through the Things URL', () => {
+  const url = buildUrl('add', { title: "Don't forget", notes: "That's the note" })
+  const params = new URL(url).searchParams
+  assert.equal(params.get('title'), "Don't forget")
+  assert.equal(params.get('notes'), "That's the note")
+})
+
 test('buildUrl omits empty values and escapes parameters', () => {
   assert.equal(
     buildUrl('add', {
